@@ -51,10 +51,10 @@ confusionMatrix(***)
 ***
 labels[test1$label=="X1"]=1
 pred <- ***
-roc = performance(pred, measure = ***)
+roc = ***(pred, measure = ***,***)
 plot(roc)
 abline(a=0, b=1)
-auc = performance(***)
+auc = ***(pred, ***)
 auc@y.values
 
 test2<-test1
@@ -131,10 +131,10 @@ confusionMatrix(***)
 labels<-rep(0,nrow(f3.1))
 labels[***]=1
 pred <- ***
-roc = performance(***)
+roc = ***(pred, measure = ***,***)
 plot(roc)
-abline(a=0, b= 1)
-auc = performance(***)
+abline(a=0, b=1)
+auc = ***(pred, ***)
 auc@y.values
 
 test4<-f3.1
