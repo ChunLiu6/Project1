@@ -1,7 +1,7 @@
 
 ***
-library(h2o)
-localH2O = h2o.init()
+***
+***
 
 f1<-read.csv("***.csv")
 f2<-f1[f1$***==***,]
