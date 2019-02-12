@@ -1,0 +1,168 @@
+
+***
+library(h2o)
+localH2O = h2o.init()
+
+f1<-read.csv("***.csv")
+f2<-f1[f1$***==***,]
+f3<-f2[is.na(f2$***) | f2$***!=***,]
+
+x<-f3[,c(***)]
+y<-f3[,***]
+names(x)
+
+d<-as.Date(x$Date_of_Payment,format="***")
+
+x$month<-substr(d,***)
+
+***
+x$Date_of_Payment<-NULL
+
+length1<-rep(0,ncol(x))
+for (i in 1:ncol(x))
+{
+  length1[i]<-length(unique(x[,i]))
+}
+length1
+***
+data<-cbind(x3,y)
+data1<-data
+summary(data1$y)
+data1$label<-"X0"
+data1$label[data1$y>=quantile(***) ]<-"X1"
+data1$y<-NULL
+***
+
+set.seed(123)
+train_ind <- sample(***)
+train <- data1[train_ind, ]
+test <- data1[-train_ind, ]
+set.seed(12345)
+train_h2o<-as.h2o(***)
+test_h2o<-as.h2o(***)
+set.seed(12345)
+model<-h2o.***(***,***,training_frame=train_h2o,***)
+summary(model)
+pred<-h2o.***(***)
+***
+***
+confusionMatrix(***)
+***
+***
+labels[test1$label=="X1"]=1
+pred <- ***
+roc = performance(pred, measure = ***)
+plot(roc)
+abline(a=0, b=1)
+auc = performance(***)
+auc@y.values
+
+test2<-test1
+levels(test2$***) <- gsub("***", "***", levels(test1$***))
+ggplot(test2,aes(x=***))+geom_bar()+theme(axis.text.x=***))
+ggplot(test2[test2$label=="X1",],aes(x=***))+geom_bar()+theme(***)
+ggplot(test2[test2$pred=="X1",],aes(x=***))+geom_bar()+theme(***)
+
+
+test2<-data
+levels(test2$***) <- gsub("***", "***", levels(test1$***))
+ggplot(test2,aes(x=***))+geom_bar()+theme(axis.text.x = ***)
+ggplot(test2[test2$y>=quantile(***),],aes(x=***))+geom_bar()+theme(***)
+
+agg1<-aggregate(test1$***,
+                by=list(test1$***),FUN=length)
+agg2<-aggregate(***)
+agg3<-aggregate(***)
+agg4<-merge(agg1,agg2,by=c("Group.1"),all.x=TRUE)
+agg5<-merge(***)
+names(agg5)[c(2,3,4)]<-c("***","***","***")
+agg5$ proportion <-agg5$***/sum(agg5$***)
+agg5[is.na(agg5)]<-0
+agg5$predicted_proportion <-agg5$predicted_***/
+  sum(agg5$predicted_***)
+agg5
+
+df1<-data.frame(percent=agg5$proportion)
+df1$status<-"proportion"
+df2<-data.frame(percent=agg5$predicted_proportion)
+df2$status<-"predicted_proportion"
+df<-rbind(df1,df2)
+p<-ggplot(df, aes(***)) +
+  geom_density(***)
+p
+
+
+f3<-f1[
+  f1$***=="***" |
+    f1$***=="***" |
+    f1$***=="***" |
+    f1$***=="***"  ,]
+f3_x<-f3[,c(***)]
+f3_y<-f3[,***]
+
+
+f3_d<-as.Date(f3_x$Date_of_Payment,format="***")
+f3_x$month<-substr(f3_d,***)
+***
+f3_x$Date_of_Payment<-NULL
+
+length1<-rep(0,ncol(f3_x))
+for (i in 1:ncol(f3_x))
+{
+  length1[i]<-length(unique(f3_x[,i]))
+}
+length1
+
+***
+f3_data<-cbind(f3_x3,f3_y)
+f3_data1<-f3_data
+f3_data1$label<-"X0"
+f3_data1$label[f3_data1$f3_y>=quantile(***) ]<-"X1"
+***
+f3_data1$f3_y<-NULL
+
+set.seed(12345)
+f3_x3_h2o<-as.h2o(***)
+f3_pred<-***
+***
+***
+confusionMatrix(***)
+***
+labels<-rep(0,nrow(f3.1))
+labels[***]=1
+pred <- ***
+roc = performance(***)
+plot(roc)
+abline(a=0, b= 1)
+auc = performance(***)
+auc@y.values
+
+test4<-f3.1
+levels(test4$***) <- gsub("***", "***", levels(test1$***))
+ggplot(test4,aes(x=***))+geom_bar()+theme(axis.text.x = ***)
+ggplot(test4[test4$label=="***",],aes(x=***))+geom_bar()+theme(***)
+ggplot(test4[test4$predict=="***",],aes(x=***))+geom_bar()+theme(***)
+
+
+agg1<-aggregate(f3.1$***,
+                by=list(f3.1$***),FUN=length)
+agg2<-aggregate(***)
+agg3<-aggregate(***)
+agg4<-merge(agg1,agg2,by=c("Group.1"),all.x=TRUE)
+agg5<-merge(***)
+names(agg5)[c(2,3,4)]<-c("***","***","***")
+agg5$proportion <-agg5$***/sum(agg5$***)
+agg5[is.na(agg5)]<-0
+agg5$predicted_proportion <-agg5$predicted_***/
+  sum(agg5$predicted_***)
+agg5
+
+
+df1<-data.frame(percent=agg5$proportion)
+df1$status<-"proportion”
+df2<-data.frame(percent=agg5$predicted_proportion)
+df2$status<-"predicted_proportion "
+df<-rbind(df1,df2)
+p<-ggplot(df, aes(***)) +
+  geom_density(***)
+p
