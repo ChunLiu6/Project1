@@ -83,7 +83,7 @@ agg5$predicted_proportion <-agg5$predicted_***/
 agg5
 
 df1<-data.frame(percent=agg5$proportion)
-df1$status<-"proportion"
+df1$status<-"proportion”
 df2<-data.frame(percent=agg5$predicted_proportion)
 df2$status<-"predicted_proportion"
 df<-rbind(df1,df2)
@@ -161,7 +161,7 @@ agg5
 df1<-data.frame(percent=agg5$proportion)
 df1$status<-"proportion”
 df2<-data.frame(percent=agg5$predicted_proportion)
-df2$status<-"predicted_proportion "
+df2$status<-"predicted_proportion"
 df<-rbind(df1,df2)
 p<-ggplot(df, aes(***)) +
   geom_density(***)
