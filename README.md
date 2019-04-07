@@ -1,11 +1,11 @@
 # Project1
 Data Science Project
 
-Data Acquisition /n
-Data Cleaning and Feature Extraction
-Feature Selection
-Model Training
-Performance Study
-Check for overfitting 
-Operating Point Selection
-Optimization and deployment
+Data Acquisition <br/>
+Data Cleaning and Feature Extraction <br/>
+Feature Selection <br/>
+Model Training <br/>
+Performance Study <br/>
+Check for overfitting  <br/>
+Operating Point Selection <br/>
+Optimization and deployment <br/>
