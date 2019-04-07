@@ -1,7 +1,7 @@
 # Project1
 Data Science Project
 
-Data Acquisition
+Data Acquisition /n
 Data Cleaning and Feature Extraction
 Feature Selection
 Model Training
